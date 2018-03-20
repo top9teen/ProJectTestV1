@@ -1,5 +1,6 @@
 package com.projectbru.demo.dao;
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -21,18 +22,17 @@ public class MemberDao {
 		StringBuilder sql = new StringBuilder();
 		
 		try {
-			sql.append(" SELECT * FROM member WHERE mem_username = ? AND mem_password = ? AND mem_role = ? AND mem_statusdelete = ? ");
+			sql.append(" SELECT * FROM member WHERE mem_username = ? AND mem_password = ? AND mem_role = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1,memberUsername);
 			prepared.setString(2,memberPassword);
 			prepared.setString(3,roleId);
-			prepared.setString(4,status);
+
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
 				bean.setMemUsername(rs.getString("mem_username"));
 				bean.setMemPassword(rs.getString("mem_password"));
 				bean.setMemRole(rs.getString("mem_role"));
-				bean.setMemRole(rs.getString(" mem_statusdelete"));
 			}
 		
 		
@@ -46,21 +46,28 @@ public class MemberDao {
 	
 	// insert member
 	public void insert (MemberBean bean) {
-		
 		    ConnectDB con = new ConnectDB();
 	 		PreparedStatement prepared = null;
 	 		StringBuilder sql = new StringBuilder();
-			
+	 		
+	 		
+	 		
+    		// Date dNow = new Date();
+          // 	 SimpleDateFormat ft = new SimpleDateFormat ("dd-MM-yyyy");
+      
+        //    bean.setMemCreateDate(ft.format(dNow));
+        // 	bean.setMemEditdata(ft.format(dNow));
+	 		
 	 		try {
-				sql.append(" INSERT INTO member(mem_username,mem_password,mem_name,mem_add,mem_phone,mem_createDate,mem_editdata,mem_statusdelete,mem_role) VALUES(?,?,?,?,?,'2018-03-07','2018-03-07','1','2') " );
+				sql.append(" INSERT INTO member(mem_username,mem_password,mem_name,mem_add,mem_phone,mem_createDate,mem_editdata,mem_statusdelete,mem_role) VALUES(?,?,?,?,?,?,?,'1','2') "  );
 				prepared = con.openConnect().prepareStatement(sql.toString());
 				prepared.setString(1, bean.getMemUsername());
 				prepared.setString(2, bean.getMemPassword());
 				prepared.setString(3, bean.getMemName());
 				prepared.setString(4, bean.getMemAdd());
 				prepared.setString(5, bean.getMemPhone());
-			//	prepared.setString(6, bean.getMemCreateDate());
-			//	prepared.setString(7, bean.getMemEditdata());
+				prepared.setString(6, bean.getMemCreateDate());
+				prepared.setString(7, bean.getMemEditdata());
 				//prepared.setInt(8, bean.getMemStatusdelete());
 			prepared.executeUpdate();
 				
@@ -122,6 +129,32 @@ public class MemberDao {
 		   return list;
 	   }
 	
+	   
+	   //ckuser
+	   public MemberBean ckuser(String memberUsername) {
+			
+			MemberBean bean = new MemberBean();
+			ConnectDB con = new ConnectDB();
+			PreparedStatement prepared = null;
+			StringBuilder sql = new StringBuilder();
+			
+			try {
+				sql.append(" SELECT * FROM member WHERE mem_username = ? ");
+				prepared = con.openConnect().prepareStatement(sql.toString());
+				prepared.setString(1,memberUsername);
+				ResultSet rs = prepared.executeQuery();
+				while (rs.next()) {
+					bean.setMemUsername(rs.getString("mem_username"));
+				}
+			
+			
+		}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+			return bean ;
+			
+		}
 	   
 	// End Class
 }

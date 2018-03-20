@@ -36,7 +36,7 @@ body {
 					%>
 					<div class="alert alert-danger">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						<strong>แบน </strong> โดนแยน 
+						<strong>แบน </strong> โดนแบน 
 					</div>
 					
 					<%
@@ -64,15 +64,11 @@ body {
 							name="password">
 					</div>
 					 <div class="form-group">
-					<select name="roleId" class="form-control">
-					<option value="1"> Personnel </option>
-					<option value="2"> Member </option>
+					<select name="roleId" class="form-control" >
+					<option value="1"> พนักงาน </option>
+					<option value="2"> สามาชิก </option>
 					</select>
 					</div> 
-					<div>
-				 <input type="hidden" class="form-control" placeholder="status" name="status" value="1" >
-					</div> 
-				</div>
 				<br>
 				<div class="panel-footer" align="right">
 					<input type="submit" class="btn btn-outline-success" value="Login">&nbsp;
@@ -107,7 +103,7 @@ body {
 	    }
 	    document.getElementById("demo").innerHTML = txt;
 	}
-	fun
+	
 	
 	</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>

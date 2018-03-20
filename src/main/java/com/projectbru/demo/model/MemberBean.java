@@ -1,5 +1,6 @@
 package com.projectbru.demo.model;
 
+
 public class MemberBean {
 
 	private int memId;

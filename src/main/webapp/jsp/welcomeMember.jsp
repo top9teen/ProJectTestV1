@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Welcome Member</title>
+    <title>Welcome สมาชิก</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="/11"> WELCOME PROJECT NEW</a>
+        <a class="navbar-brand" href="/11"> WELCOME PROJECT สมาชิก</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,7 +44,7 @@
               <a class="nav-link" href="#">จัดการการจอง&nbsp;</a>
             </li>
                 <li class="nav-item">
-              <a class="nav-link" href="#">โปรไฟล์ผู้ใช้&nbsp;</a>
+              <a class="nav-link" href="/ProfileMember">โปรไฟล์ผู้ใช้&nbsp;</a>
             </li>
                   <li class="nav-item">
               <a class="nav-link" href="#">ติดต่อสอบถาม&nbsp;</a>
