@@ -32,6 +32,7 @@ public class AdminDao {
 			while (rs.next()) {
 				bean.setAdminUsername(rs.getString("admin_username"));
 				bean.setAdminPassword(rs.getString("admin_password"));
+				bean.setAdminName(rs.getString("admin_name"));
 			}
 		
 		

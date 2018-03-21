@@ -35,10 +35,10 @@ public class AdminController {
 			bean = adminDao.admin(username, password);
 			findAll = adminDao.findAll();
 			if(bean.getAdminUsername()!=null){
-				request.getSession().setAttribute("LoginMember", bean);
+				request.getSession().setAttribute("LoginAdmin", bean);
 				request.getSession().setAttribute("listMember", findAll);
 				
-			outhen = "welcome";
+			outhen = "welcomeAdmin";
 			}else {
 		 model.addAttribute("messessError", "F");
 		       outhen ="adminlogin";
@@ -48,6 +48,41 @@ public class AdminController {
 			// TODO: handle exception
 		}		
 		return outhen;
+	}
+	
+	@RequestMapping("/logoutadmin")
+	public String Loout(HttpServletRequest request , Model model) {
+		request.getSession().removeAttribute("LoginMember");
+		request.getSession().removeAttribute("listMember");
+		 model.addAttribute("messessError","L");
+		 return  "adminlogin";
+	}
+	
+	@RequestMapping("/welcomeAdmin")
+	public String welcomeAdmin() {
+		
+		return "welcomeAdmin";
+	}
+	
+	@RequestMapping("/widgets")
+	public String widgets() {
+		
+		return "admin/widgets";
+	}
+	@RequestMapping("/charts")
+	public String charts() {
+		
+		return "admin/charts";
+	}
+	@RequestMapping("/elements")
+	public String elements() {
+		
+		return "admin/elements";
+	}
+	@RequestMapping("/panelsl")
+	public String panelsl() {
+		
+		return "admin/panelsl";
 	}
 	//End Class
 }

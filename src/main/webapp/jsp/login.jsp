@@ -75,6 +75,7 @@ body {
 					<input type="button" class="btn btn-outline-secondary" value="Register" onclick="register()">&nbsp;&nbsp;
 				</div>
 			</div>
+				</div>
 		</form>
 	</div>
 	<script type="text/javascript">
